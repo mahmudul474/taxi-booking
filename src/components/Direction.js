@@ -13,9 +13,9 @@ const location = {
   lng: 90.406707,
 };
 
-function Direction({ origin, destination }) {
+function Direction({ origin, destination ,distance, setDistance}) {
   const [directionResponse, setDirectionResponse] = useState(null);
-  const [distance, setDistance] = useState(null);
+ 
 
   const calculateDistance = (response) => {
     if (response.rows[0].elements[0].status === "OK") {
@@ -69,7 +69,7 @@ function Direction({ origin, destination }) {
           />
         )}
       </GoogleMap>
-      {distance && <h1>{distance} km</h1>}
+     
     </LoadScript>
   );
 }

@@ -1,0 +1,43 @@
+[
+    {
+        "name":"BMW",
+        "img":"https://i.ibb.co/122JX3V/download.jpg",
+        "price": 50,
+        "about":". Duis eget ultricies augue, in volutpat nunc. Mauris suscipit varius erat, at ultrices diam elementum eu. Praesent magna felis, rhoncus at risus non, porttitor commodo lacus. Phasellus commodo ornare dignissim. Ut et imperdiet nulla. Sed at enim non sem molestie blandit eget sed ligul",
+        "sit": "2",
+        "lagege":"1"
+    },
+    {
+        "name":"Marcedise",
+        "img":"https://i.ibb.co/Lnxj7Nv/download.jpg",
+        "price":90 ,
+        "about":". Duis eget ultricies augue, in volutpat nunc. Mauris suscipit varius erat, at ultrices diam elementum eu. Praesent magna felis, rhoncus at risus non, porttitor commodo lacus. Phasellus commodo ornare dignissim. Ut et imperdiet nulla. Sed at enim non sem molestie blandit eget sed ligul",
+        "sit": "4",
+        "lagege":"4"
+    },
+    {
+        "name":"luxery",
+        "img":"https://i.ibb.co/SJg88pb/download.jpg",
+        "price":400 ,
+        "about":". Duis eget ultricies augue, in volutpat nunc. Mauris suscipit varius erat, at ultrices diam elementum eu. Praesent magna felis, rhoncus at risus non, porttitor commodo lacus. Phasellus commodo ornare dignissim. Ut et imperdiet nulla. Sed at enim non sem molestie blandit eget sed ligul",
+        "sit": "10",
+        "lagege":"1"
+    },
+
+    {
+        "name":"Toyota",
+        "img":"https://i.ibb.co/9bQt0mR/images.jpg",
+        "price":200 ,
+        "about":". Duis eget ultricies augue, in volutpat nunc. Mauris suscipit varius erat, at ultrices diam elementum eu. Praesent magna felis, rhoncus at risus non, porttitor commodo lacus. Phasellus commodo ornare dignissim. Ut et imperdiet nulla. Sed at enim non sem molestie blandit eget sed ligul",
+        "sit": "6",
+        "lagege":"2"
+    },
+    {
+        "name":"TaTa",
+        "img":"https://i.ibb.co/HBK202h/images.jpg",
+        "price":300 ,
+        "about":". Duis eget ultricies augue, in volutpat nunc. Mauris suscipit varius erat, at ultrices diam elementum eu. Praesent magna felis, rhoncus at risus non, porttitor commodo lacus. Phasellus commodo ornare dignissim. Ut et imperdiet nulla. Sed at enim non sem molestie blandit eget sed ligul",
+        "sit": "5",
+        "lagege":"2"
+    }
+]
