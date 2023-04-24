@@ -1,21 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Sidebar from "../components/RightSidebar/Sidebar";
 
 const Main = () => {
-  const navitem = (
-    <>
-      <li>
-        <span>1</span> place info
-      </li>
-      <li>
-        {" "}
-        <span>2</span> chose car
-      </li>
-    </>
-  );
+ 
 
   return (
-    <div>
+    <div className="flex flex-col justify-center lg:flex-row-reverse">
+
+      <div className="p-6">
+        <Sidebar></Sidebar>
+      </div>
       <Outlet></Outlet>
     </div>
   );

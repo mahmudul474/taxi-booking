@@ -13,7 +13,7 @@ const location = {
   lng: 90.406707,
 };
 
-function Direction({ origin, destination,}) {
+function Directions({ origin, destination,}) {
  
     
 
@@ -29,6 +29,9 @@ function Direction({ origin, destination,}) {
       setDistance(distanceInKm);
     }
   };
+
+
+  
 
   return (
     <LoadScript googleMapsApiKey={API_KEY}>
@@ -79,4 +82,4 @@ function Direction({ origin, destination,}) {
   );
 }
 
-export default React.memo(Direction);
+export default React.memo(Directions);

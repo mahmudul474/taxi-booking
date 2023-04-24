@@ -9,6 +9,8 @@ import DataContext from "./Datacontext/Datas";
 import UserDettails from "./Pages/UserDettails/UserDettails";
 import Payment from "./Pages/Payment/Payment";
 import Thaks from "./Pages/Thaks";
+import Direction from "./components/Direction";
+import V from "./components/V";
 
 function App() {
   const [data, setData] = useState(null);
@@ -39,8 +41,17 @@ function App() {
           element: <Carinfo></Carinfo>,
         },
         {
+  path:"/s",
+  element:<Direction></Direction>
+        },
+        {
           path: "/userinfo",
           element: <UserDettails></UserDettails>,
+        },
+
+        {
+          path:"/v",
+          element:<V></V>
         },
         {
           path: "/payment",

@@ -13,33 +13,25 @@ const location = {
   lng: 90.406707,
 };
 
-function Direction({ origin, destination,}) {
- 
-    
+function V({  distance, setDistance}) {
 
+   const origin="dhaka"
+   const destination="mirpur"
 
   const [directionResponse, setDirectionResponse] = useState(null);
  
-  const [distance, setDistance] = useState(null);
-  
-  const calculateDistance = (response) => {
-    if (response.rows[0].elements[0].status === "OK") {
-      const distanceInMeters = response.rows[0].elements[0].distance.value;
-      const distanceInKm = distanceInMeters / 1000;
-      setDistance(distanceInKm);
-    }
-  };
+
 
   return (
     <LoadScript googleMapsApiKey={API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={10}>
+      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={20}>
         {origin !== "" && destination !== "" && (
           <>
             <DirectionsService
               // required
               options={{
                 destination: destination,
-                origin: origin ? origin :"",
+                origin: origin,
                 travelMode: "DRIVING",
               }}
               // required
@@ -53,15 +45,11 @@ function Direction({ origin, destination,}) {
               // required
               options={{
                 destinations: [destination],
-                origins: [origin?origin:""],
+                origins: [origin],
                 travelMode: "DRIVING",
               }}
               // required
-              callback={(res) => {
-                if (res !== null) {
-                  calculateDistance(res);
-                }
-              }}
+             
             />
           </>
         )}
@@ -79,4 +67,4 @@ function Direction({ origin, destination,}) {
   );
 }
 
-export default React.memo(Direction);
+export default React.memo(V);
