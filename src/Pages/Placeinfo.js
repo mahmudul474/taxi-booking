@@ -17,32 +17,7 @@ const Placeinfo = () => {
 
   const { data, setData } = useContext(DataContext);
 
-  const [selected, setSelected] =useState("")
-
-  let footer = <p>Please pick a day.</p>;
-  if (selected) {
-    footer = <p>You picked {format(selected, 'PP')}.</p>;
-  }
   
-
-  const handlecarInfo = () => {
-    if (origin === null || origin === undefined) {
-      console.log("Error: myVariable is null or undefined.");
-    } else {
-      
-
-       const info={
-        origin:origin?origin :"dhaka",
-        destination
-       }
-
-
-        setData(info)
-    }
-   
- 
-    
-  };
 
 
 
@@ -50,6 +25,10 @@ const Placeinfo = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
+
+   console.log(selectedValue)
+
+
 
   const handleDropdownClick = () => {
     setIsOpen(!isOpen);
@@ -60,9 +39,10 @@ const Placeinfo = () => {
   };
 
   const handleOkClick = () => {
-    setSelectedValue(inputValue);
+    setSelectedValue(selected);
     setInputValue("");
     setIsOpen(false);
+  
   };
 
   const handleCancelClick = () => {
@@ -102,7 +82,49 @@ const Placeinfo = () => {
     setDate(event.target.value);
   };
 
+
+
+  ///local sotore 
+
+
+  const [selected, setSelected] =useState("")
   
+
+  
+
+  let footer = <p>Please pick a day.</p>;
+  if (selected) {
+    footer = <p>You picked {format(selected, 'PP')}.</p>;
+      
+  }
+  
+
+  const handlecarInfo = () => {
+    if (origin === null || origin === undefined) {
+      console.log("Error: myVariable is null or undefined.");
+    } else {
+      
+
+       const info={
+        origin:origin?origin :"dhaka",
+        destination,
+        startdate:selected ?selected :""
+         
+       }
+
+
+        setData(info)
+    }
+   
+ 
+    
+  };
+
+
+
+
+
+
 
   return (
     <>
@@ -138,8 +160,8 @@ const Placeinfo = () => {
        <div className="relative">
       <input
         type="text"
-        placeholder="Click to select..."
-        value={selectedValue}
+         value={format(selected, 'PP')}
+        
         onClick={handleDropdownClick}
  
         className="w-full p-6 pl-10 border border-black"
@@ -193,10 +215,10 @@ const Placeinfo = () => {
         
         
         
-    <div className="my-6">
+    <div className="my-6 ">
 
-      <button onClick={handleCancelButtonClick}>singel</button>
-      <button className="px-4 py-2 text-white bg-blue-500 rounded" onClick={handleReturnDateClick}>Return Date</button>
+      <button className="px-4 py-2 mr-4 text-white bg-blue-500 rounded" onClick={handleCancelButtonClick}>singel</button>
+      <button className="px-4 py-2 mb-4 text-white bg-blue-500 rounded" onClick={handleReturnDateClick}>Return Date</button>
       {showInput && (
         <div className="">
           <div className="p-4 bg-white border rounded shadow">
