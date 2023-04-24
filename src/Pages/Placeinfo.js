@@ -19,14 +19,11 @@ const Placeinfo = () => {
 
   
 
-
-
-
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
 
-   console.log(selectedValue)
+
 
 
 
@@ -48,15 +45,16 @@ const Placeinfo = () => {
   const handleCancelClick = () => {
     setInputValue("");
     setIsOpen(false);
+    setSelected("")
   };
 
 
  
 
 
+//return date set
 
-
-
+const [returndate,setReturndate]=useState("")
 
   const [showInput, setShowInput] = useState(false);
   const [date, setDate] = useState("");
@@ -67,11 +65,14 @@ const Placeinfo = () => {
 
   const handleOkButtonClick = () => {
     setShowInput(false);
-    console.log("Date:", date); // Here, you can set the date value in the state or send it to the server.
+    setReturndate(  date); // Here, you can set the date value in the state or send it to the server.
   };
 
   const handleCancelButtonClick = () => {
     setShowInput(false);
+    setReturndate("")
+    
+    
   };
 
   const handleInputClick = () => {
@@ -131,6 +132,7 @@ const Placeinfo = () => {
       <div className="flex my-[60px] justify-center items-center">
         <div className="w-[500px] capitalize">
          <h1 className="text-4xl font-bold capitalize mb-7">juerny</h1>
+        
           <div className="px-3">
            <div>
            <span className="absolute mt-3" ><img className="w-10"  alt="" src="https://i.ibb.co/k0zYh5q/home.png"/></span>
@@ -160,8 +162,9 @@ const Placeinfo = () => {
        <div className="relative">
       <input
         type="text"
-         value={format(selected, 'PP')}
-        
+         
+       
+        value={selected ? format(selected, 'PP') :"input jurny date"}
         onClick={handleDropdownClick}
  
         className="w-full p-6 pl-10 border border-black"
@@ -174,9 +177,6 @@ const Placeinfo = () => {
       onSelect={setSelected}
       footer={footer}
     />
-
- 
-       
 
           <div className="flex justify-end px-4 py-2 bg-gray-100">
             <button onClick={handleCancelClick} className="mr-2 text-gray-700">
@@ -203,7 +203,26 @@ const Placeinfo = () => {
 
 
 
+{
+  returndate &&
+  
+  
+  <div className="my-3">
 
+  <span className="absolute mt-3"><img className="w-10" alt="" src="https://i.ibb.co/Qm8mDYc/location-1.png"/></span>
+ <input
+     value={returndate}
+        className="w-full p-6 pl-10 border border-black"
+        type="text"
+        placeholder="Going to"
+        
+         onBlur={()=>handlecarInfo()}
+      />  
+
+ </div>
+  
+  
+}
 
 
 
