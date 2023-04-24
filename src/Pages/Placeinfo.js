@@ -71,17 +71,38 @@ const Placeinfo = () => {
   };
 
 
-  const [showInput, setShowInput] = useState(false);
+ 
 
-  const handleButtonClick = () => {
+
+
+
+
+
+  const [showInput, setShowInput] = useState(false);
+  const [date, setDate] = useState("");
+
+  const handleReturnDateClick = () => {
     setShowInput(true);
   };
 
-  const handleInputClick = () => {
+  const handleOkButtonClick = () => {
+    setShowInput(false);
+    console.log("Date:", date); // Here, you can set the date value in the state or send it to the server.
+  };
+
+  const handleCancelButtonClick = () => {
     setShowInput(false);
   };
 
+  const handleInputClick = () => {
+    setShowInput(!showInput);
+  };
 
+  const handleretunChange = (event) => {
+    setDate(event.target.value);
+  };
+
+  
 
   return (
     <>
@@ -125,14 +146,6 @@ const Placeinfo = () => {
  />
       {isOpen && (
         <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
-        
-
-        
-      
-
-
-
- 
 <DayPicker
       mode="single"
       selected={selected}
@@ -157,19 +170,49 @@ const Placeinfo = () => {
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>
-
-          <div>
-           
-
+          <div>   
+          </div>
         
+        
+        
+        
+        
+    <div className="my-6">
+
+      <button onClick={handleCancelButtonClick}>singel</button>
+      <button className="px-4 py-2 text-white bg-blue-500 rounded" onClick={handleReturnDateClick}>Return Date</button>
+      {showInput && (
+        <div className="">
+          <div className="p-4 bg-white border rounded shadow">
+            <input type="date" className="w-full mb-4" onChange={handleretunChange} />
+            <div className="flex justify-end">
+              <button className="px-4 py-2 mr-2 text-white bg-gray-500 rounded" onClick={handleCancelButtonClick}>Cancel</button>
+              <button className="px-4 py-2 text-white bg-blue-500 rounded" onClick={handleOkButtonClick}>Ok</button>
+            </div>
           </div>
         </div>
-
+      )}
+    </div>
         
+        
+        
+        </div>
       </div>
 
      
