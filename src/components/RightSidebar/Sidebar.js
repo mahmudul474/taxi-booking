@@ -18,10 +18,12 @@ const Sidebar = () => {
  <div>
  {data ? <Direction origin={data.origin} destination={data.destination} />:"hello"}
  </div>
+
+ <div>
+    {data ? <JusnyDettaills ></JusnyDettaills> :"nice data"}
+ </div>
      
-   <div>
-    <JusnyDettaills data={data}></JusnyDettaills>
-   </div>
+   
 
         </div>
     );

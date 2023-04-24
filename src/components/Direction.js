@@ -15,7 +15,6 @@ const location = {
 
 function Direction({ origin, destination,}) {
  
-    
 
 
   const [directionResponse, setDirectionResponse] = useState(null);
@@ -39,7 +38,7 @@ function Direction({ origin, destination,}) {
               // required
               options={{
                 destination: destination,
-                origin: origin ? origin :"",
+                origin: origin,
                 travelMode: "DRIVING",
               }}
               // required
@@ -53,7 +52,7 @@ function Direction({ origin, destination,}) {
               // required
               options={{
                 destinations: [destination],
-                origins: [origin?origin:""],
+                origins: [origin],
                 travelMode: "DRIVING",
               }}
               // required

@@ -16,28 +16,86 @@ const Placeinfo = () => {
   const { data, setData } = useContext(DataContext);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-  const [selectedValue, setSelectedValue] = useState("");
+ 
 
   const handleDropdownClick = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+
+ 
+
+
+
+
+
+  const [startdate, setStartDate] =useState("")
+  const [selectedDate, setSelectedDate] = useState("");
+  const [showDatePicker, setShowDatePicker] = useState(false);
+
+  const handleReturnDaeClick = () => {
+    setShowDatePicker(true);
   };
 
   const handleOkClick = () => {
-    setSelectedValue(selected);
-    setInputValue("");
-    setIsOpen(false);
+    setShowDatePicker(false);
+    setStartDate( selectedDate); // You can set the selected date value in the state or send it to the server.
   };
 
   const handleCancelClick = () => {
-    setInputValue("");
-    setIsOpen(false);
-    setSelected("");
+    setShowDatePicker(false);
+    setSelectedDate("");
+    setStartDate("");
   };
+
+  const handleDateInputChange1 = (event) => {
+    setSelectedDate(event.target.value);
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
 
   //return date set
 
@@ -60,9 +118,7 @@ const Placeinfo = () => {
     setReturndate("");
   };
 
-  const handleInputClick = () => {
-    setShowInput(!showInput);
-  };
+
 
   const handleretunChange = (event) => {
     setDate(event.target.value);
@@ -70,12 +126,7 @@ const Placeinfo = () => {
 
   ///local sotore
 
-  const [selected, setSelected] = useState("");
 
-  let footer = <p>Please pick a day.</p>;
-  if (selected) {
-    footer = <p>You picked {format(selected, "PP")}.</p>;
-  }
 
   const handlecarInfo = () => {
     if (origin === null || origin === undefined) {
@@ -84,7 +135,7 @@ const Placeinfo = () => {
       const info = {
         origin: origin ? origin : "dhaka",
         destination,
-        startdate: selected ? selected : "",
+        startdate: startdate ?startdate :"",
         returndate: returndate ? returndate : "",
       };
 
@@ -132,42 +183,51 @@ const Placeinfo = () => {
                 onBlur={() => handlecarInfo()}
               />
             </div>
+            <div>
 
-            <div className="relative">
-              <input
-                type="text"
-                value={
-                  selected
-                    ? "jurnyday " + format(selected, "PP")
-                    : "input jurny date"
-                }
-                onClick={handleDropdownClick}
-                onBlur={() => handlecarInfo()}
-                className="w-full p-6 pl-10 border border-black"
-              />
-              {isOpen && (
-                <div className="absolute z-10 w-full mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
-                  <DayPicker
-                    mode="single"
-                    selected={selected}
-                    onSelect={setSelected}
-                    footer={footer}
-                  />
 
-                  <div className="flex justify-end px-4 py-2 bg-gray-100">
-                    <button
-                      onClick={handleCancelClick}
-                      className="mr-2 text-gray-700"
-                    >
-                      Cancel
-                    </button>
-                    <button onClick={handleOkClick} className="text-blue-500">
-                      OK
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
+
+  <input
+    className="w-full p-6 pl-10 border border-black"
+    onClick={handleReturnDaeClick }
+    value={ startdate ? startdate :"jurnydate" }
+    onBlur={() => handlecarInfo()}
+  />
+    
+  {showDatePicker && (
+    <div className="">
+      <div className="p-4 bg-white border rounded shadow">
+        <input
+          type="date"
+          className="w-full mb-4"
+          onChange={handleDateInputChange1}
+          onBlur={() => handlecarInfo()}
+        />
+        <div className="flex justify-end">
+          <button
+            className="px-4 py-2 mr-2 text-white bg-gray-500 rounded"
+            onClick={handleCancelClick}
+          >
+            Cancel
+          </button>
+          <button
+            className="px-4 py-2 text-white bg-blue-500 rounded"
+            onClick={handleOkClick}
+          >
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
+
+
+
+     
+
+
 
             {returndate && (
               <div className="my-3">
@@ -190,7 +250,8 @@ const Placeinfo = () => {
               </div>
             )}
           </div>
-          <div></div>
+
+          
 
           <div className="my-6 ">
             <button
