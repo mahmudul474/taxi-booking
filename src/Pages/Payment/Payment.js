@@ -79,6 +79,8 @@ const Payment = () => {
                 </section>
             </div>
               <div className="flex justify-end  "> 
+              <Link to="/userinfo">
+          <button className="btn bg-green-950 mr-3 ">previus</button></Link>
               <Link to="/thanks">
           <button className="btn bg-green-950 "> Book Now</button></Link>
            </div>
