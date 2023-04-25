@@ -1,7 +1,8 @@
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { GoogleMap, LoadScript, DirectionsService, DirectionsRenderer, DistanceMatrixService } from "@react-google-maps/api";
 import { API_KEY } from "./config";
+import DataContext from "../Datacontext/Datas";
 
 const containerStyle = {
   width: "600px",
@@ -13,8 +14,12 @@ const location = {
   lng: 90.406707,
 };
 
-function Direction({ origin, destination,}) {
+function Direction() {
  
+
+
+
+const {data}=useContext(DataContext)
 
 
   const [directionResponse, setDirectionResponse] = useState(null);
@@ -32,13 +37,16 @@ function Direction({ origin, destination,}) {
   return (
     <LoadScript googleMapsApiKey={API_KEY}>
       <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={10}>
-        {origin !== "" && destination !== "" && (
+     
+      
+     
+     { data &&      data.origin !== "" && data.destination !== "" && (
           <>
             <DirectionsService
               // required
               options={{
-                destination: destination,
-                origin: origin,
+                destination: data.destination,
+                origin: data.origin,
                 travelMode: "DRIVING",
               }}
               // required
@@ -51,8 +59,8 @@ function Direction({ origin, destination,}) {
             <DistanceMatrixService
               // required
               options={{
-                destinations: [destination],
-                origins: [origin],
+                destinations: [data.destination],
+                origins: [data.origin],
                 travelMode: "DRIVING",
               }}
               // required
@@ -71,7 +79,11 @@ function Direction({ origin, destination,}) {
               directions: directionResponse,
             }}
           />
-        )}
+        )} 
+
+
+
+        
       </GoogleMap>
      
     </LoadScript>

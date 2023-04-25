@@ -16,7 +16,7 @@ const Sidebar = () => {
   
     
  <div>
- {data ? <Direction origin={data.origin} destination={data.destination} />:"hello"}
+<Direction />
  </div>
 
  <div>

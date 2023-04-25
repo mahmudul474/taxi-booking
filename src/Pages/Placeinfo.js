@@ -127,13 +127,15 @@ const Placeinfo = () => {
   ///local sotore
 
 
+ console.log(startdate , "start date") 
+
 
   const handlecarInfo = () => {
     if (origin === null || origin === undefined) {
       console.log("Error: myVariable is null or undefined.");
     } else {
       const info = {
-        origin: origin ? origin : "dhaka",
+        origin: origin && origin, 
         destination,
         startdate: startdate ?startdate :"",
         returndate: returndate ? returndate : "",
