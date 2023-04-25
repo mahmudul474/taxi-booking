@@ -120,7 +120,7 @@ const Placeinfo = () => {
      googleMapsApiKey={API_KEY}
      libraries={["places"]}
     >
-      <form className="flex my-[60px] justify-center items-center">
+      <div className="flex my-[60px] justify-center items-center">
         <div
 
         className="w-[500px] capitalize">
@@ -190,7 +190,7 @@ const Placeinfo = () => {
     className="w-full p-6 pl-12 border border-black"
     onClick={handleReturnDaeClick }
     value={ startdate ? startdate :"DayOf-Juerny" }
-    onBlur={() => handlecarInfo()}
+  
   />
   </div>
     
@@ -201,7 +201,7 @@ const Placeinfo = () => {
           type="date"
           className="w-full mb-4"
           onChange={handleDateInputChange1}
-          onBlur={() => handlecarInfo()}
+        
         />
         <div className="flex justify-end">
           <button
@@ -244,7 +244,7 @@ const Placeinfo = () => {
                   className="w-full p-6 pl-14 border border-black"
                   type="text"
                    
-                  required
+                  
                   
                 />
               </div>
@@ -306,7 +306,7 @@ const Placeinfo = () => {
        
        
         </div>
-      </form>
+      </div>
 
       </LoadScript>
     </>
