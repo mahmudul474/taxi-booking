@@ -182,13 +182,21 @@ const Placeinfo = () => {
             <div>
 
 
-
+<div>
+<span className="absolute mt-3  ">
+                  <img
+                    className="w-10 mx-1"
+                    alt=""
+                    src="https://i.ibb.co/k4NbC3q/calendar.png"
+                  />
+                </span>
   <input
-    className="w-full p-6 pl-10 border border-black"
+    className="w-full p-6 pl-12 border border-black"
     onClick={handleReturnDaeClick }
-    value={ startdate ? startdate :"jurnydate" }
+    value={ startdate ? startdate :"DayOf-Juerny" }
     onBlur={() => handlecarInfo()}
   />
+  </div>
     
   {showDatePicker && (
     <div className="">
@@ -227,17 +235,17 @@ const Placeinfo = () => {
 
             {returndate && (
               <div className="my-3">
-                <span className="absolute mt-3">
+                <span className="absolute mt-3 mx-2">
                   <img
-                    className="w-10"
+                    className="w-10 "
                     alt=""
-                    src="https://i.ibb.co/Qm8mDYc/location-1.png"
+                    src="https://i.ibb.co/k4NbC3q/calendar.png"
                   />
                 </span>
                 <input
                    
                   value={"ReturnDate " + returndate}
-                  className="w-full p-6 pl-10 border border-black"
+                  className="w-full p-6 pl-14 border border-black"
                   type="text"
                    
                   required

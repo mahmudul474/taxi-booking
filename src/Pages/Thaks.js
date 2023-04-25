@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
+  const deledata=()=>{
+  localStorage.clear();
+  }
+
 const num=Math.random();
 const Thaks = () => {
   return (
@@ -12,7 +17,7 @@ const Thaks = () => {
    
    <div className="flex justify-end mt-12">
   <Link to="/">
- <button className="btn bg-green-950">Back To Home </button></Link>
+ <button onClick={deledata}  className="btn bg-green-950">Back To Home </button></Link>
 </div>
    
    
