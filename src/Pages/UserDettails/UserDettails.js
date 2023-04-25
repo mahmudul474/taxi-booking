@@ -24,32 +24,28 @@ const UserDettails = () => {
       number,
     };
     setUserInfo(info);
-    navigate("/payment");
+    
   };
 
   return (
-    <div className="flex justify-center ">
-      <div>
-        <div className="w-[400px]  p-[30px]">
-          <h2 className="text-2xl font-bold my-[20px]">summary</h2>
-
-          <div className="m-auto ">
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">pikup-location: {data.start}</h1>
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">Drop-location: {data.end}</h1>
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">Data: {data.date}</h1>
-          </div>
-
-          <div className="w-[600px] mt-[50px] border font-bold text-2xl capitalize m-auto ">
-            <h1>total-Cost : {category.totalprice} taka</h1>
-            <button className="btn w-[150px] mx-auto my-[40px]  " type="submit" onClick={handlefrom}>
-              next
-            </button>
-          </div>
-        </div>
-      </div>
+   
+  
 
       <div className="my-[50px]">
-        <from className=" w-600px ">
+        <from className=" ">
+
+
+           <div>
+            
+           
+<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your message</label>
+<textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+
+            </div> 
+
+
+
+
           <div className="w-full">
             <input
               className="input my-5  input-bordered input-primary w-full "
@@ -77,22 +73,15 @@ const UserDettails = () => {
               className=" my-5 input input-bordered input-primary w-full "
               required
               onChange={(e) => setNum(e.target.value)}
+              onBlur={()=>handlefrom()}
               name="phone"
               placeholder="phone"
             />
 
-            <textarea
-              className="textarea textarea-bordered textarea-lg w-full max-w-xs"
-              onChange={(e) => setMsg(e.target.value)}
-              name="msg"
-              cols={20}
-              rows={3}
-              placeholder="msg"
-            ></textarea>
           </div>
         </from>
       </div>
-    </div>
+
   );
 };
 

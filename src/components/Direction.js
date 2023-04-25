@@ -19,7 +19,7 @@ function Direction({setDistance}) {
 
 
 
-const {data}=useContext(DataContext)
+const {data, setData}=useContext(DataContext)
 
 
   const [directionResponse, setDirectionResponse] = useState(null);
@@ -31,12 +31,13 @@ const {data}=useContext(DataContext)
       const distanceInMeters = response.rows[0].elements[0].distance.value;
       const distanceInKm = distanceInMeters / 1000;
       setDistance(distanceInKm);
+     
     }
   };
 
   return (
     <LoadScript googleMapsApiKey={API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={90}>
+      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={10}>
      
       
      

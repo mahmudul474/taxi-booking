@@ -6,8 +6,10 @@ const JusnyDettaills = ({distance}) => {
 
 
   
-  const {data}=useContext(DataContext)
+  const {setData,data}=useContext(DataContext)
 
+   
+ 
 
   return (
     <div className="p-3 text-left capitalize">
