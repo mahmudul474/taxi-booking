@@ -91,3 +91,6 @@ const {data}=useContext(DataContext)
 }
 
 export default React.memo(Direction);
+
+
+//  <input type="text" value={origin} onChange={(e) => {setOrigin(e.target.value); handlecarInfo()}} />

@@ -20,7 +20,7 @@ const Sidebar = () => {
  </div>
 
  <div>
-    {data ? <JusnyDettaills ></JusnyDettaills> :"nice data"}
+      <JusnyDettaills ></JusnyDettaills> 
  </div>
      
    
