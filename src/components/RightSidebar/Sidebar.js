@@ -5,16 +5,10 @@ import Directions from '../Directions';
 import JusnyDettaills from './Jusrnydettails/JusnyDettaills';
 
 const Sidebar = () => {
-
   const {data}=useContext(DataContext)
-
  const [distance, setDistance] = useState(null);
-  
-
     return (
         <div>
-  
-    
  <div className=''>
 <Direction setDistance={setDistance} />
  </div>

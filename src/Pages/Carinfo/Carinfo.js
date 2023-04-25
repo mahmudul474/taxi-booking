@@ -16,6 +16,8 @@ const Carinfo = () => {
 ////btn selese color
  
 
+  const[btncolor,setBtncolor]=useState(null)
+console.log(btncolor)
    
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const Carinfo = () => {
 
  const carsave=(car)=>{
      setCategory(car)
+     setBtncolor(car.id)
 
    }
 
@@ -56,12 +59,19 @@ const Carinfo = () => {
 
         <div>
 
-         <button
+
+
+{
+  btncolor === car.id ? <button className="py-2 px-4 rounded-md bg-green-700 text-black font-bold  capitalize">selected</button>:    <button
         className="py-2 px-4 rounded-md bg-orange-500 text-black font-bold  capitalize "
         onClick={()=> carsave(car)}
       >
        select
       </button>
+}
+
+
+     
         </div>
     </div>
 

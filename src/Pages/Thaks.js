@@ -17,7 +17,7 @@ const Thaks = () => {
    
    <div className="flex justify-end mt-12">
   <Link to="/">
- <button onClick={deledata}  className="btn bg-green-950">Back To Home </button></Link>
+ <button   className="btn bg-green-950">Back To Home </button></Link>
 </div>
    
    

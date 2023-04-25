@@ -5,6 +5,8 @@ import "react-day-picker/dist/style.css";
 
 import DataContext from "../Datacontext/Datas";
 import { Link, useNavigate } from "react-router-dom";
+import { Autocomplete, LoadScript } from "@react-google-maps/api";
+import { API_KEY } from "../components/config";
 
 const Placeinfo = () => {
   const [origin, setOrigin] = useState("");
@@ -54,35 +56,10 @@ const Placeinfo = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 
 
-
-
-
-
-
+ 
 
 
 
@@ -139,45 +116,64 @@ const Placeinfo = () => {
 
   return (
     <>
-      <div className="flex my-[60px] justify-center items-center">
+    <LoadScript 
+     googleMapsApiKey={API_KEY}
+     libraries={["places"]}
+    >
+      <form className="flex my-[60px] justify-center items-center">
         <div
 
         className="w-[500px] capitalize">
           <h1 className="text-4xl font-bold capitalize mb-7">juerny</h1>
 
           <div className="px-3">
-            <div>
-              <span className="absolute mt-3">
+            <div className="relative">
+            
+              
+              <Autocomplete>
+              <input
+                className="w-full p-6 relative pl-10 border border-black"
+                type="text"
+                placeholder="Starting From"
+             
+                required
+                onBlur={(e) => {
+                  setOrigin(e.target.value)
+                  handlecarInfo()}}
+              />
+              </Autocomplete>
+               <span className="absolute top-4 right-0 ">
                 <img
                   className="w-10"
                   alt=""
                   src="https://i.ibb.co/k0zYh5q/home.png"
                 />
               </span>
-              <input
-                className="w-full p-6 pl-10 border border-black"
-                type="text"
-                placeholder="Starting From"
-                onChange={(e) => setOrigin(e.target.value)}
-                onBlur={() => handlecarInfo()}
-              />
             </div>
 
-            <div className="my-3">
-              <span className="absolute mt-3">
+            <div className="my-3 relative">
+             
+              <Autocomplete>
+              <input
+                className="w-full relative p-6 pl-10 border border-black"
+                type="text"
+                placeholder="Going to"
+                 required
+               onBlur={(e) => {
+    setDestination(e.target.value);
+    handlecarInfo();
+  }}
+              />
+              </Autocomplete>
+
+
+               <span className="absolute mt-3 top-0 right-0">
                 <img
                   className="w-10"
                   alt=""
                   src="https://i.ibb.co/Qm8mDYc/location-1.png"
                 />
               </span>
-              <input
-                className="w-full p-6 pl-10 border border-black"
-                type="text"
-                placeholder="Going to"
-                onChange={(e) => setDestination(e.target.value)}
-                onBlur={() => handlecarInfo()}
-              />
             </div>
             <div>
 
@@ -304,13 +300,15 @@ const Placeinfo = () => {
        
        <div className="flex justify-end ">
         <Link to="/car">
-        <button className="btn" onClick={handlecarInfo}> next</button>
+        <button type="submit" className="btn" onClick={handlecarInfo}> next</button>
         </Link>
        </div>
        
        
         </div>
-      </div>
+      </form>
+
+      </LoadScript>
     </>
   );
 };

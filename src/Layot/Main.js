@@ -8,7 +8,7 @@ const Main = () => {
   return (
     
     <div className=" border  h-screen">
-    <div className="flex flex-col bg-slate-100 border-black border  m-32 justify-center lg:flex-row-reverse">
+    <div className="flex flex-col-reverse md:flex-col-reverse  bg-slate-50 rounded-lg rounded border-black border  m-32 justify-center lg:flex-row-reverse">
 
       <div className="p-6">
         <Sidebar></Sidebar>
