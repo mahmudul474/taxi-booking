@@ -14,7 +14,7 @@ const location = {
   lng: 90.406707,
 };
 
-function Direction() {
+function Direction({setDistance}) {
  
 
 
@@ -24,7 +24,7 @@ const {data}=useContext(DataContext)
 
   const [directionResponse, setDirectionResponse] = useState(null);
  
-  const [distance, setDistance] = useState(null);
+ 
   
   const calculateDistance = (response) => {
     if (response.rows[0].elements[0].status === "OK") {
@@ -36,7 +36,7 @@ const {data}=useContext(DataContext)
 
   return (
     <LoadScript googleMapsApiKey={API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={10}>
+      <GoogleMap mapContainerStyle={containerStyle} center={location} zoom={90}>
      
       
      
@@ -91,6 +91,3 @@ const {data}=useContext(DataContext)
 }
 
 export default React.memo(Direction);
-
-
-//  <input type="text" value={origin} onChange={(e) => {setOrigin(e.target.value); handlecarInfo()}} />

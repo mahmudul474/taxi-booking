@@ -71,7 +71,7 @@ function App() {
   }, [data, category, userInfo]);
 
   return (
-    <div className="App">
+    <div className="App  ">
       <DataContext.Provider value={{ data, setData, category, setCategory, userInfo, setUserInfo }}>
         <RouterProvider router={routes}></RouterProvider>
       </DataContext.Provider>

@@ -7,25 +7,10 @@ const Carinfo = () => {
   const { data, setCategory } = useContext(DataContext);
   const navigate = useNavigate();
 
-  const [selectcar, setSelectCar] = useState(null);
+ 
 
-  const carPrice = selectcar && selectcar.price;
-  const kilo = data?.km;
-
-  const total = carPrice * kilo;
-
-  console.log(total);
-
-  const handlecarandtotalprice = () => {
-    const info = {
-      totalprice: total,
-      kilo: data,
-      car: selectcar,
-    };
-
-    setCategory(info);
-    navigate("/userinfo");
-  };
+  
+ 
 
   useEffect(() => {
     fetch("car.json")
@@ -38,55 +23,36 @@ const Carinfo = () => {
  
 
   return (
-    <>
-      <div className="flex justify-between flex-row capitalize mt-[50px] ">
-        <div className="w-[400px]  p-[30px]">
-          <h2 className="text-2xl font-bold my-[20px]">summary</h2>
+    
+  <>
+   <div>
+    <h1>select Car</h1>
 
-          <div className="m-auto ">
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">pikup-location: {data.start}</h1>
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">Drop-location: {data.end}</h1>
-            <h1 className="w-full border font-bold text-2xl capitalize m-auto p-10">Data: {data.date}</h1>
-          </div>
+    <div className="my-4">
 
-          <div className="w-[600px] mt-[50px] border font-bold text-2xl capitalize m-auto ">
-            <h1>distance: {kilo} Km </h1>
-            <h1>Per-Kilo : {carPrice}</h1>
-
-            <h1>total-Cost : {total} taka</h1>
-
-            <button className="btn w-[150px] mx-auto my-[40px]  " onClick={handlecarandtotalprice}>
-              next
-            </button>
-          </div>
+      {
+        cars?.map(car=>
+<a href="#" class="flex my-7 flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={car.img}alt=""/>
+    <div class="flex flex-col justify-between p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Name: {car.name}</h5>
+        <div className="flex my-4 justify-center items-center">
+          <span className="  text-xl mr-7 flex justify-center"><img className="w-7 mr-2 h-7" src="https://i.ibb.co/hBcRn5C/user.png"/> <p>{car.sit}</p> </span>
+          <span className="flex text-xl mr-7  justify-center"><img   className="w-7 mr-2 h-7 " src="https://i.ibb.co/rsJQX4K/luggage.png"/> <p>{car.luggage}</p></span>
+          <span className="flex text-xl justify-center"><img   className="w-7 mr-2 h-7 " src="https://i.ibb.co/TL982VT/low-cost.png"/> <p>{car.price}TK per K.M</p></span>
         </div>
-        <div className="flex flex-col w-2/4">
-          {cars?.map((car) => (
-            <>
-              <div className="card card-side bg-base-100 shadow-xl">
-                <img src={car.img} alt="car" />
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{car.about}</p>
+    </div>
+</a>
+)
+      }
+    </div>
 
-                <div className="card-body">
-                  <h2 className="card-title">Name:{car.name}</h2>
-                  <p className="text-left">About: {car.about}</p>
-                  <div className="flex justify-center capitalize font-bold text-xl">
-                    <p className="">sit: {car.sit}</p>
-                    <p>lagej: {car.lagege}</p>
-                    <p> Price-perkilo : {car.price} taka</p>
-                  </div>
 
-                  <div className="card-actions justify-center">
-                    <button className="btn btn-primary" onClick={() => setSelectCar(car)}>
-                      slect
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-      </div>
-    </>
+   </div>
+  
+  </>
+  
   );
 };
 

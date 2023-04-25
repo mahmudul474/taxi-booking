@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Direction from '../Direction';
 import DataContext from '../../Datacontext/Datas';
 import Directions from '../Directions';
@@ -8,7 +8,7 @@ const Sidebar = () => {
 
   const {data}=useContext(DataContext)
 
-
+ const [distance, setDistance] = useState(null);
   
 
     return (
@@ -16,11 +16,11 @@ const Sidebar = () => {
   
     
  <div>
-<Direction />
+<Direction setDistance={setDistance} />
  </div>
 
  <div>
-      <JusnyDettaills ></JusnyDettaills> 
+      <JusnyDettaills distance={distance} ></JusnyDettaills> 
  </div>
      
    

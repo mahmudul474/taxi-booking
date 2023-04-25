@@ -6,12 +6,15 @@ const Main = () => {
  
 
   return (
-    <div className="flex flex-col justify-center lg:flex-row-reverse">
+    
+    <div className=" border  h-screen">
+    <div className="flex flex-col bg-slate-100 border-black border  m-32 justify-center lg:flex-row-reverse">
 
       <div className="p-6">
         <Sidebar></Sidebar>
       </div>
       <Outlet></Outlet>
+    </div>
     </div>
   );
 };

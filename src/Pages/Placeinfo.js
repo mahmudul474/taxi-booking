@@ -86,17 +86,6 @@ const Placeinfo = () => {
 
 
 
-
-
-
-
-
-
-
-  
-
-
-
   //return date set
 
   const [returndate, setReturndate] = useState("");
@@ -126,17 +115,17 @@ const Placeinfo = () => {
 
   ///local sotore
 
-
- console.log(startdate , "start date") 
+ 
 
 
   const handlecarInfo = () => {
+  
     if (origin === null || origin === undefined) {
       console.log("Error: myVariable is null or undefined.");
     } else {
       const info = {
-        origin: origin && origin, 
-        destination,
+        origin: origin ? origin :"", 
+        destination : destination ? destination :"",
         startdate: startdate ?startdate :"",
         returndate: returndate ? returndate : "",
       };
@@ -145,10 +134,15 @@ const Placeinfo = () => {
     }
   };
 
+
+  
+
   return (
     <>
       <div className="flex my-[60px] justify-center items-center">
-        <div className="w-[500px] capitalize">
+        <div
+
+        className="w-[500px] capitalize">
           <h1 className="text-4xl font-bold capitalize mb-7">juerny</h1>
 
           <div className="px-3">
@@ -241,7 +235,7 @@ const Placeinfo = () => {
                   />
                 </span>
                 <input
-                     onBlur={() => handlecarInfo()}
+                   
                   value={"ReturnDate " + returndate}
                   className="w-full p-6 pl-10 border border-black"
                   type="text"
@@ -295,6 +289,16 @@ const Placeinfo = () => {
               </div>
             )}
           </div>
+        
+        
+        
+        
+       
+       <div className="flex justify-end ">
+        <button className="btn" onClick={handlecarInfo}> next</button>
+       </div>
+       
+       
         </div>
       </div>
     </>
