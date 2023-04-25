@@ -1,9 +1,11 @@
 import React from "react";
 
+const num=Math.random();
 const Thaks = () => {
   return (
     <div className="w-full m-auto text-center  ">
-      <img className="w-full h-screen  m-auto" src="https://www.shutterstock.com/image-vector/thank-you-poster-spectrum-brush-260nw-1153070891.jpg" />
+      <h1 className="text-2xl">Youre order Succesfylly done </h1>
+      <h2 className=" text-center">order id <span className="text-green-950 text-3xl ">{num}</span></h2>
     </div>
   );
 };

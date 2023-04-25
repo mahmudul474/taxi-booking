@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div>
   
     
- <div>
+ <div className=''>
 <Direction setDistance={setDistance} />
  </div>
 

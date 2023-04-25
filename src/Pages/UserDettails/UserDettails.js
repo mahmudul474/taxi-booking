@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import DataContext from "../../Datacontext/Datas";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserDettails = () => {
   const { data, setData, category, setCategory, userInfo, setUserInfo } = useContext(DataContext);
@@ -79,6 +79,17 @@ const UserDettails = () => {
             />
 
           </div>
+
+
+  
+            <div className="flex justify-end ">
+    <Link to="/car"> <button className="btn bg-green-950  mr-4">Previous</button></Link>
+
+    <Link to="/payment">
+       <button className=" btn bg-green-950">Next</button>
+    </Link>
+    
+   </div>
         </from>
       </div>
 

@@ -40,19 +40,13 @@ function App() {
           path: "/car",
           element: <Carinfo></Carinfo>,
         },
-        {
-  path:"/s",
-  element:<Direction></Direction>
-        },
+     
         {
           path: "/userinfo",
           element: <UserDettails></UserDettails>,
         },
 
-        {
-          path:"/v",
-          element:<V></V>
-        },
+        
         {
           path: "/payment",
           element: <Payment></Payment>,

@@ -14,7 +14,7 @@ const JusnyDettaills = ({distance}) => {
  
 
   return (
-    <div className="p-3 text-left capitalize">
+    <div className="p-3 text-left capitalize ">
       <h1 className="text-xl font-bold">From: {data  && data.origin }</h1>
       <h1 className="text-xl font-bold">To: {data && data.destination }</h1>
 

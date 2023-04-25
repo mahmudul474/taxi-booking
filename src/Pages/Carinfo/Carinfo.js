@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../Datacontext/Datas";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Carinfo = () => {
   const [cars, setCar] = useState([]);
@@ -55,6 +55,7 @@ const Carinfo = () => {
 
 
         <div>
+
          <button
         className="py-2 px-4 rounded-md bg-orange-500 text-black font-bold  capitalize "
         onClick={()=> carsave(car)}
@@ -71,7 +72,12 @@ const Carinfo = () => {
 
 
    <div className="flex justify-end ">
-     <button className=" btn bg-green-950">Next</button>
+    <Link to="/"> <button className="btn bg-green-950  mr-4">Previous</button></Link>
+
+    <Link to="/userinfo">
+       <button className=" btn bg-green-950">Next</button>
+    </Link>
+    
    </div>
 
     </div>

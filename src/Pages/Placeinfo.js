@@ -4,7 +4,7 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 import DataContext from "../Datacontext/Datas";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Placeinfo = () => {
   const [origin, setOrigin] = useState("");
@@ -295,7 +295,9 @@ const Placeinfo = () => {
         
        
        <div className="flex justify-end ">
+        <Link to="/car">
         <button className="btn" onClick={handlecarInfo}> next</button>
+        </Link>
        </div>
        
        
