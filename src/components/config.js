@@ -1,1 +1,2 @@
-export const API_KEY = "AIzaSyCwPq4ziAFg70-tUvs8tFYj5C5jrC0SLWE";
+export const API_KEY = "AIzaSyDCOoYxcK0kSBNvJA-JxN-TRW-2fOt2FvE";
+export const plcases=["places"]

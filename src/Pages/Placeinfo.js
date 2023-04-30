@@ -6,7 +6,7 @@ import "react-day-picker/dist/style.css";
 import DataContext from "../Datacontext/Datas";
 import { Link, useNavigate } from "react-router-dom";
 import { Autocomplete, LoadScript } from "@react-google-maps/api";
-import { API_KEY } from "../components/config";
+import { API_KEY, plcases } from "../components/config";
 
 const Placeinfo = () => {
   const [origin, setOrigin] = useState("");
@@ -118,7 +118,7 @@ const Placeinfo = () => {
     <>
     <LoadScript 
      googleMapsApiKey={API_KEY}
-     libraries={["places"]}
+     libraries={plcases}
     >
       <div className="flex my-[60px] justify-center items-center">
         <div

@@ -1,0 +1,34 @@
+.containerStyle {
+  width: "400px",
+};
+
+ 
+@media screen and (max-width: 767px) {
+  /* For screens smaller than 767px */
+  .container {
+    width: 100%; 
+    height: auto; 
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* For screens between 768px and 1023px */
+  .container {
+    width: 50%;  
+    height: 400px;  
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* For screens larger than 1023px */
+  .container {
+    width: 30%;  
+    height: 500px;  
+  }
+}
+
+
+
+.btn{
+    background-color: red;
+}
